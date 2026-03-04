@@ -1,0 +1,68 @@
+.results-shell {
+    display: grid;
+    gap: 1rem;
+}
+
+.podium-grid {
+    display: grid;
+    gap: 0.8rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+}
+
+.podium-card {
+    border: 1px solid #dbe7f7;
+    border-radius: 14px;
+    padding: 0.9rem;
+    background: linear-gradient(160deg, #f9fcff, #eef5ff);
+    box-shadow: 0 8px 18px rgba(22, 74, 145, 0.1);
+}
+
+.podium-card--first {
+    min-height: 200px;
+    background: linear-gradient(160deg, #fff8db, #ffe9a6);
+    border-color: #e3c970;
+}
+
+.podium-card--second {
+    min-height: 170px;
+    background: linear-gradient(160deg, #f2f4f9, #dfe5ef);
+    border-color: #c2ccda;
+}
+
+.podium-card--third {
+    min-height: 145px;
+    background: linear-gradient(160deg, #fbeedd, #f3d0ab);
+    border-color: #dfb88f;
+}
+
+.podium-rank {
+    font-weight: 800;
+    color: #324765;
+    margin-bottom: 0.45rem;
+}
+
+.podium-text {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #15253f;
+}
+
+.podium-votes {
+    margin-top: 0.45rem;
+    font-weight: 700;
+    color: #344a69;
+}
+
+@media (max-width: 760px) {
+    .podium-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .podium-card,
+    .podium-card--first,
+    .podium-card--second,
+    .podium-card--third {
+        min-height: unset;
+    }
+}

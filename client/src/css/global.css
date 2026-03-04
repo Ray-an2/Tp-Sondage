@@ -1,0 +1,393 @@
+:root {
+    --blue-main: #1976d2;
+    --blue-light: #e3f2fd;
+    --blue-dark: #0b3c7c;
+    --cyan-accent: #00acc1;
+    --gray-bg: #f2f6fc;
+    --card-bg: #ffffff;
+    --text-main: #172033;
+    --text-muted: #5e6a82;
+    --border: #dce6f5;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --shadow-md: 0 14px 32px rgba(16, 51, 108, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    min-height: 100%;
+}
+
+body {
+    font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+    color: var(--text-main);
+    line-height: 1.55;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(25, 118, 210, 0.12), transparent 42%),
+        radial-gradient(circle at 90% 85%, rgba(0, 172, 193, 0.10), transparent 38%),
+        linear-gradient(180deg, #f8fbff 0%, var(--gray-bg) 100%);
+}
+
+main,
+.page-shell,
+.home-shell,
+.poll-container {
+    width: min(980px, calc(100% - 2rem));
+    margin: 2rem auto;
+    padding: clamp(1rem, 3vw, 1.6rem);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-md);
+}
+
+h1 {
+    margin-bottom: 1.1rem;
+    color: var(--blue-dark);
+    text-wrap: balance;
+}
+
+h1,
+h2,
+legend {
+    font-family: "Space Grotesk", "Manrope", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blue-main);
+    font-weight: 700;
+}
+
+a:hover {
+    color: var(--blue-dark);
+}
+
+p {
+    color: var(--text-muted);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 0.55rem 0.95rem;
+    background: linear-gradient(135deg, var(--blue-main), #2b8de5);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+    box-shadow: 0 8px 16px rgba(25, 118, 210, 0.24);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+    transform: none;
+}
+
+form {
+    display: grid;
+    gap: 0.85rem;
+}
+
+label {
+    display: grid;
+    gap: 0.38rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="datetime-local"],
+textarea {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #c9d8ed;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--text-main);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #7ab7f2;
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--blue-main);
+}
+
+fieldset {
+    border: 1px solid #d7e4f6;
+    border-radius: 12px;
+    padding: 0.85rem;
+    display: grid;
+    gap: 0.55rem;
+}
+
+legend {
+    padding: 0 0.35rem;
+    color: var(--blue-dark);
+    font-weight: 700;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.poll-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 0.9rem;
+    color: var(--blue-main);
+}
+
+.home-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.1rem;
+}
+
+.home-auth {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    align-items: center;
+}
+
+.home-auth span {
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    font-weight: 700;
+    border: 1px solid #cae4ff;
+}
+
+.home-new-poll-button {
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 999px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.35rem;
+    line-height: 1;
+    color: #fff;
+    background: linear-gradient(135deg, var(--blue-main), #2b8de5);
+    box-shadow: 0 8px 16px rgba(25, 118, 210, 0.24);
+    transition: transform 0.16s ease, filter 0.16s ease, box-shadow 0.16s ease;
+}
+
+.home-new-poll-button:hover {
+    color: #fff;
+    transform: translateY(-1px) scale(1.02);
+    filter: brightness(1.03);
+    box-shadow: 0 10px 18px rgba(14, 82, 170, 0.28);
+}
+
+.home-poll-list {
+    display: grid;
+    gap: 0.65rem;
+    margin-top: 0.9rem;
+}
+
+.home-poll-item {
+    padding: 0.9rem 1rem;
+    border: 1px solid #dce9fb;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, #f6fbff, #eef7ff);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-poll-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 15px rgba(24, 84, 165, 0.12);
+}
+
+.home-poll-item--add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e8f4ff, #dff2ff);
+}
+
+.muted-message {
+    color: var(--text-muted);
+}
+
+.error-message {
+    color: #b80d3c;
+    font-weight: 700;
+}
+
+@media (max-width: 740px) {
+    main,
+    .page-shell,
+    .home-shell,
+    .poll-container {
+        width: min(980px, calc(100% - 1rem));
+        margin: 1rem auto;
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    .home-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+.emoji-dropdown {
+    position: fixed;
+    right: 1.2rem;
+    bottom: 1.2rem;
+    z-index: 60;
+}
+
+.emoji-dropdown__trigger {
+    width: 3.15rem;
+    height: 3.15rem;
+    border-radius: 999px;
+    border: 1px solid #a8cbf3;
+    background: linear-gradient(140deg, #ffffff, #e8f3ff);
+    color: var(--blue-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    font-size: 1.25rem;
+    box-shadow: 0 10px 20px rgba(13, 71, 152, 0.2);
+    padding: 0;
+}
+
+.emoji-dropdown__trigger:hover {
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(13, 71, 152, 0.24);
+}
+
+.emoji-dropdown__current {
+    line-height: 1;
+}
+
+.emoji-dropdown__chevron {
+    font-size: 0.78rem;
+    color: #4a6f98;
+    line-height: 1;
+}
+
+.emoji-dropdown__menu {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.6rem);
+    min-width: 210px;
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.45rem;
+    border-radius: 12px;
+    border: 1px solid #cde0f8;
+    background: #ffffff;
+    box-shadow: 0 14px 30px rgba(17, 70, 141, 0.2);
+}
+
+.emoji-dropdown__item {
+    justify-content: flex-start;
+    gap: 0.55rem;
+    background: #f6fbff;
+    color: var(--text-main);
+    border: 1px solid #e0ebfa;
+    padding: 0.5rem 0.7rem;
+    font-weight: 700;
+}
+
+.emoji-dropdown__item:hover {
+    background: #e9f4ff;
+    border-color: #bed8f7;
+}
+
+.emoji-float-layer {
+    position: fixed;
+    right: 1.8rem;
+    bottom: 4.8rem;
+    z-index: 55;
+    pointer-events: none;
+}
+
+.emoji-float {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 1.8rem;
+    opacity: 0;
+    animation: emoji-zigzag-rise 3s ease-out forwards;
+}
+
+@keyframes emoji-zigzag-rise {
+    0% {
+        transform: translate(var(--emoji-start-x), 0) scale(0.7) rotate(-8deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    20% {
+        transform: translate(calc(var(--emoji-start-x) + 20px), -12vh) scale(0.95) rotate(8deg);
+    }
+    40% {
+        transform: translate(calc(var(--emoji-start-x) - 18px), -27vh) scale(1.05) rotate(-7deg);
+    }
+    60% {
+        transform: translate(calc(var(--emoji-start-x) + 16px), -43vh) scale(1.08) rotate(7deg);
+    }
+    80% {
+        transform: translate(calc(var(--emoji-start-x) - 14px), -58vh) scale(1) rotate(-5deg);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(var(--emoji-end-x), -72vh) scale(0.86) rotate(5deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 740px) {
+    .emoji-dropdown {
+        right: 0.8rem;
+        bottom: 0.8rem;
+    }
+
+    .emoji-dropdown__menu {
+        min-width: 190px;
+    }
+
+    .emoji-float-layer {
+        right: 1.2rem;
+    }
+}
