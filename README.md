@@ -1,7 +1,7 @@
 # TP 6 - Deploiement (Client + Server + Nginx)
 
 ## Prerequis
-
+- Avoir fait les 5 TP précèdents 
 - `deno` installé
 - `mkcert` installé
 - `nginx` en local dans `~/.local/bin/nginx`
@@ -65,5 +65,4 @@ kill "$(cat nginx.pid)"
 ```bash
 ~/.local/bin/nginx -p "$PWD" -c nginx.conf
 ```
-
-
+- Si vous n'arriver pas à lancer nginx, vous pouvez comme même lancer le client-server et sur la barre de recherche, taper :`http://127.0.0.1:3000`
